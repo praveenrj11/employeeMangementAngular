@@ -1,0 +1,25 @@
+<h2>Employee List</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">EmailId</th>
+      <th scope="col">Delete/Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.emailId}}</td>
+      <td>
+        <i (click) ="deleteEmp(employee.id)" class="fa fa-trash fa-trash"></i>&nbsp;
+        <i  routerLink ="/update/{{employee.id}}"class="fa fa-edit fa-edit"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
